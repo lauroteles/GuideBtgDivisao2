@@ -216,26 +216,26 @@ if selecionar == 'BTG':
                                     height=500,
                                     num_rows='dynamic')
          
-    if arquivo_final2 is not None:
-        
-        
-        # Use io.BytesIO para criar um buffer de bytes
-        output4 = io.BytesIO()
-        st.markdown(" Download ")
-        # Salve o DataFrame no buffer no formato XLSX
-        with pd.ExcelWriter(output4, engine='xlsxwriter') as writer:
-            arquivo_final2.to_excel(writer,
-                                        sheet_name='abaixo_de_100k.xlsx',
-                                          index=False)
-        
-        # Crie um link para download
-        output4.seek(0)
-        st.download_button(
-            label="Clique para fazer o download",
-            data=output4,
-            file_name='Dvisão de contas por operador.xlsx',
-            key='download_button'
-        )
+        if arquivo_final2 is not None:
+            
+            
+            # Use io.BytesIO para criar um buffer de bytes
+            output4 = io.BytesIO()
+            st.markdown(" Download ")
+            # Salve o DataFrame no buffer no formato XLSX
+            with pd.ExcelWriter(output4, engine='xlsxwriter') as writer:
+                arquivo_final2.to_excel(writer,
+                                            sheet_name='abaixo_de_100k.xlsx',
+                                              index=False)
+            
+            # Crie um link para download
+            output4.seek(0)
+            st.download_button(
+                label="Clique para fazer o download",
+                data=output4,
+                file_name='Dvisão de contas por operador.xlsx',
+                key='download_button'
+            )
 
     
         ########################################        GUIDE >>>>>>>>
