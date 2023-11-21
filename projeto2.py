@@ -160,6 +160,12 @@ if selecionar == 'BTG':
         filtro6  = (arquivo_final['VALOR']>100000) & (arquivo_final['Operador']=='Léo')
         arquivo_final.loc[filtro6,'Operador'] = 'Léo'
 
+        filtro7 = (arquivo_final['VALOR']>100000)&(arquivo_final['Operador'] =='Breno')
+        arquivo_final.loc[filtro7,'Operador'] = 'Edu'
+
+        filtro7 = (arquivo_final['VALOR']>100000)&(arquivo_final['Operador'] =='Bruno')
+        arquivo_final.loc[filtro7,'Operador'] = 'Léo'
+
         
         
         st.subheader('Este e o novo filtro')
