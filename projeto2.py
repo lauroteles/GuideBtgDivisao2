@@ -163,8 +163,8 @@ if selecionar == 'BTG':
         filtro7 = (arquivo_final['VALOR']>100000)&(arquivo_final['Operador'] =='Breno')
         arquivo_final.loc[filtro7,'Operador'] = 'Edu'
 
-        filtro7 = (arquivo_final['VALOR']>100000)&(arquivo_final['Operador'] =='Bruno')
-        arquivo_final.loc[filtro7,'Operador'] = 'Léo'
+        filtro8 = (arquivo_final['VALOR']>100000)&(arquivo_final['Operador'] =='Bruno')
+        arquivo_final.loc[filtro8,'Operador'] = 'Léo'
 
         
         
