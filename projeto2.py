@@ -196,7 +196,7 @@ if selecionar == 'BTG':
         arquivo_final2 = arquivo_final2.rename(columns=
                                             {'Unnamed: 12':'Perfil da Carteira'})
         
-        arquivo_final2 = arquivo_final2.loc[arquivo_final2['Status'] == 'Ativo']
+        arquivo_final2 = arquivo_final2.loc[(arquivo_final2['Status'] == 'Ativo') | (arquivo_final2['Status'] == 'Pode Operar')]
 
         
         arquivo_final2 = arquivo_final2.iloc[:,[2,1,10,5,6,7,8,3,9,4]]
