@@ -168,14 +168,17 @@ if selecionar == 'BTG':
 
         
         
-        st.subheader('Este e o novo filtro')
+        #st.subheader('Este e o novo filtro')
         
         filtro_de_saldo = ((arquivo_final['SALDO']>1000)|(arquivo_final['SALDO']<0))
         arquivo_final2 = arquivo_final.loc[filtro_de_saldo]
+
+        arquivo_final2['Operador'] = arquivo_final2['Operador'].fillna('Checar conta')
+        arquivo_final2['Backoffice/ Mesa'] = arquivo_final2['Backoffice/ Mesa'].fillna('Checar conta')
     
        
         #### Criando funcao para alterar o nome dos operardores de acordo com criterios #### 
-        print(arquivo_final2.info())
+    
         
         arquivo_final2 = arquivo_final2.reset_index()
         
@@ -196,7 +199,7 @@ if selecionar == 'BTG':
         arquivo_final2 = arquivo_final2.rename(columns=
                                             {'Unnamed: 12':'Perfil da Carteira'})
         
-        arquivo_final2 = arquivo_final2.loc[(arquivo_final2['Status'] == 'Ativo') | (arquivo_final2['Status'] == 'Pode Operar')]
+        arquivo_final2 = arquivo_final2.loc[(arquivo_final2['Status'] == 'Ativo') | (arquivo_final2['Status'] == 'Pode Operar')| (arquivo_final2['Status'] == 'Checar conta')]
 
         
         arquivo_final2 = arquivo_final2.iloc[:,[2,1,10,5,6,7,8,3,9,4]]
