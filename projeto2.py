@@ -98,7 +98,7 @@ if selecionar == 'BTG':
         saldo = saldo.drop(columns='NOME')
 
         
-        controle =  controle.iloc[:,[1,2,6,7,12,16,17,18]]
+        controle =  controle.iloc[:,[1,2,6,7,12,16,17,18,-1]]
        
         
         
@@ -188,7 +188,7 @@ if selecionar == 'BTG':
                                             {'Mesa de Operação.2':'Lembretes Mesa'})
 
         arquivo_final2 = arquivo_final2.rename(columns=
-                                            {'VALOR':'PL Total'})
+                                            {'VALOR':'BTG PL'})
         arquivo_final2 = arquivo_final2.rename(columns=
                                             {'Saldo':'Saldo Disponivel'})
         arquivo_final2 = arquivo_final2.rename(columns=
@@ -198,11 +198,13 @@ if selecionar == 'BTG':
         #>>>>25/10  'Backoffice/ Mesa'
         arquivo_final2 = arquivo_final2.rename(columns=
                                             {'Unnamed: 12':'Perfil da Carteira'})
+        arquivo_final2 = arquivo_final2.rename(columns=
+                                    {'Unnamed: 35':'PL Desatualizado'})
         
         arquivo_final2 = arquivo_final2.loc[(arquivo_final2['Status'] == 'Ativo') | (arquivo_final2['Status'] == 'Pode Operar')| (arquivo_final2['Status'] == 'Checar conta')]
 
         
-        arquivo_final2 = arquivo_final2.iloc[:,[2,1,10,5,6,7,8,3,9,4]]
+        arquivo_final2 = arquivo_final2.iloc[:,[2,1,11,5,6,7,8,9,10,4,3]]
         #Alterações dia 25/10
 
         ######### Manipulacao do streamlit ##############
